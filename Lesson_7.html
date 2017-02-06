@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Fengting Sun" />
+
+
+<title>Lesson 7 Next Generation Profiling</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Fengting eLearning Resource</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Data Profiling Lesson
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Lesson_1.html">Lesson 1 Data Profiling: Finding Metadata</a>
+    </li>
+    <li>
+      <a href="Lesson_2.html">Lesson 2 Profiling Tasks</a>
+    </li>
+    <li>
+      <a href="Lesson_3.html">Lesson 3 Column Analysis</a>
+    </li>
+    <li>
+      <a href="Lesson_4.html">Lesson 4 Multi-Column Analysis</a>
+    </li>
+    <li>
+      <a href="Lesson_5_Dependency_detection.html">Lesson 5 Dependency Detection</a>
+    </li>
+    <li>
+      <a href="Lesson_6.html">Lesson 6 Profiling Tools</a>
+    </li>
+    <li>
+      <a href="Lesson_7.html">Lesson 7 Next Generation Profiling</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Lesson 7 Next Generation Profiling</h1>
+<h4 class="author"><em>Fengting Sun</em></h4>
+
+</div>
+
+
+<hr />
+<div id="next-generation-profiling" class="section level3">
+<h3>1. Next generation profiling</h3>
+<p>Recent trends in data management have added new challenges but also opportunities for data profiling:</p>
+<ol style="list-style-type: decimal">
+<li><p>Under the big data umbrella, industry and research have turned their attention to data that they do not own or have not made use of yet. Data profiling can help assess which data might be useful and reveals the yet unknown characteristics of such new data.</p></li>
+<li><p>Much of the data that shall be exploited is of non-traditional type for data profiling, and it is often truly “big,” both in terms of schema and in terms of data.</p></li>
+<li><p>Different and new data manage- ment architectures and frameworks have emerged, including distributed systems, key-value stores, column-oriented layouts, streaming input, etc.</p></li>
+</ol>
+<div id="profiling-for-integration" class="section level5">
+<h5>1) Profiling for integration</h5>
+<p>Like integration projects themselves, integrability has two dimensions, namely schematic fit and data fit.</p>
+<ul>
+<li><p><strong>Schematic fit</strong> is the degree to which two schemata complement and overlap each other and can be determined using schema matching techniques.</p></li>
+<li><p><strong>Data fit</strong> is the (estimated) number of real-world objects that are represented in both datasets, or that are represented multiple times in a single dataset and how different they are.</p></li>
+</ul>
+</div>
+<div id="profiling-non-relational-data" class="section level5">
+<h5>2) Profiling non-relational data</h5>
+<p>With the rapid growth of the World Wide Web, semi-structured data, such as XML and Rdf data, and non- structured data, have become more important. The more flexible structure of non-relational datasets opens new challenges for profiling algorithms. We focus on the three most relevant non- relational data formats: XML, Rdf, and text documents.</p>
+<ul>
+<li>XML
+<ul>
+<li>XML is the quasi-standard for exchanging data on the Web. Many applications, especially Web services, provide their results as XML documents.</li>
+<li>XML structure explicitly contains markup and schema information, different profiling approaches have to be considered.</li>
+</ul></li>
+<li>RDF
+<ul>
+<li>The requirement for Rdf data should be machine readable.</li>
+<li>Its important use-case Linked Open Data (Lod) give rise to Rdf-specific challenges for data profiling.</li>
+</ul></li>
+<li>Text
+<ul>
+<li>Many text analysis approaches and applications can be regarded as text profiling tasks.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="profiling-dynamic-data" class="section level3">
+<h3>2. Profiling dynamic data</h3>
+<ul>
+<li>It is desirable to re-profile a dataset after a change, such as a deletion, insertion, or update, in order to obtain up-to-date metadata.</li>
+</ul>
+<hr />
+</div>
+<div id="profiling-on-new-architectures" class="section level3">
+<h3>3. Profiling on new architectures</h3>
+<p>There are at least two database architecture trends that affect profiling.</p>
+<ol style="list-style-type: decimal">
+<li><p>First is column versus row storage. Column-store systems appear to have a natural computational advantage, at least in terms of the column analysis tasks.</p></li>
+<li><p>Second trend is that of distributed and cloud data management. This introduces additional profiling challenges, such as combining statistics from multiple nodes into final per-column analysis.</p></li>
+</ol>
+<hr />
+</div>
+<div id="visualization" class="section level3">
+<h3>4. Visualization</h3>
+<p>Produces the data and meta- data to be visualized, and the visualization community, which enables users to understand and make use of the data, is needed.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
