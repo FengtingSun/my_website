@@ -1,0 +1,24 @@
+name: "my-website"
+navbar:
+  title: "Fengting eLearning Resource"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Data Profiling Lesson"
+      menu:
+        - text: "Lesson 1 Data Profiling: Finding Metadata"
+          href: Lesson_1.html
+        - text: "Lesson 2 Profiling Tasks"
+          href: Lesson_2.html
+        - text: "Lesson 3 Column Analysis"
+          href: Lesson_3.html
+        - text: "Lesson 4 Multi-Column Analysis"
+          href: Lesson_4.html        
+        - text: "Lesson 5 Dependency Detection"
+          href: Lesson_5_Dependency_detection.html    
+        - text: "Lesson 6 Profiling Tools"
+          href: Lesson_6.html    
+        - text: "Lesson 7 Next Generation Profiling"
+          href: Lesson_7.html               
+    - text: "About"
+      href: about.html
