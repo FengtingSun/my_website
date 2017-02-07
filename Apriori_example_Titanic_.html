@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Fengting eLearning Resource</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Data Profiling Lesson
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Lesson_1.html">Lesson 1 Data Profiling: Finding Metadata</a>
+    </li>
+    <li>
+      <a href="Lesson_2.html">Lesson 2 Profiling Tasks</a>
+    </li>
+    <li>
+      <a href="Lesson_3.html">Lesson 3 Column Analysis</a>
+    </li>
+    <li>
+      <a href="Lesson_4.html">Lesson 4 Multi-Column Analysis</a>
+    </li>
+    <li>
+      <a href="Lesson_5_Dependency_detection.html">Lesson 5 Dependency Detection</a>
+    </li>
+    <li>
+      <a href="Lesson_6.html">Lesson 6 Profiling Tools</a>
+    </li>
+    <li>
+      <a href="Lesson_7.html">Lesson 7 Next Generation Profiling</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="lesson-5-example-apriori-algorithmtitanci" class="section level4">
+<h4>Lesson 5 Example: Apriori algorithm(Titanci)</h4>
+<pre class="r"><code>load(&quot;~/Desktop/Test/titanic.raw.rdata&quot;)
+head(titanic.raw)</code></pre>
+<pre><code>##   Class  Sex   Age Survived
+## 1   3rd Male Child       No
+## 2   3rd Male Child       No
+## 3   3rd Male Child       No
+## 4   3rd Male Child       No
+## 5   3rd Male Child       No
+## 6   3rd Male Child       No</code></pre>
+<pre class="r"><code>attach(titanic.raw)
+library(arules)</code></pre>
+<pre><code>## Loading required package: Matrix</code></pre>
+<pre><code>## 
+## Attaching package: &#39;arules&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     abbreviate, write</code></pre>
+<pre class="r"><code>rules = apriori(titanic.raw)</code></pre>
+<pre><code>## Apriori
+## 
+## Parameter specification:
+##  confidence minval smax arem  aval originalSupport maxtime support minlen
+##         0.8    0.1    1 none FALSE            TRUE       5     0.1      1
+##  maxlen target   ext
+##      10  rules FALSE
+## 
+## Algorithmic control:
+##  filter tree heap memopt load sort verbose
+##     0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+## 
+## Absolute minimum support count: 220 
+## 
+## set item appearances ...[0 item(s)] done [0.00s].
+## set transactions ...[10 item(s), 2201 transaction(s)] done [0.00s].
+## sorting and recoding items ... [9 item(s)] done [0.00s].
+## creating transaction tree ... done [0.00s].
+## checking subsets of size 1 2 3 4 done [0.00s].
+## writing ... [27 rule(s)] done [0.00s].
+## creating S4 object  ... done [0.00s].</code></pre>
+<pre class="r"><code>inspect(rules)</code></pre>
+<pre><code>##      lhs                                   rhs           support  
+## [1]  {}                                 =&gt; {Age=Adult}   0.9504771
+## [2]  {Class=2nd}                        =&gt; {Age=Adult}   0.1185825
+## [3]  {Class=1st}                        =&gt; {Age=Adult}   0.1449341
+## [4]  {Sex=Female}                       =&gt; {Age=Adult}   0.1930940
+## [5]  {Class=3rd}                        =&gt; {Age=Adult}   0.2848705
+## [6]  {Survived=Yes}                     =&gt; {Age=Adult}   0.2971377
+## [7]  {Class=Crew}                       =&gt; {Sex=Male}    0.3916402
+## [8]  {Class=Crew}                       =&gt; {Age=Adult}   0.4020900
+## [9]  {Survived=No}                      =&gt; {Sex=Male}    0.6197183
+## [10] {Survived=No}                      =&gt; {Age=Adult}   0.6533394
+## [11] {Sex=Male}                         =&gt; {Age=Adult}   0.7573830
+## [12] {Sex=Female,Survived=Yes}          =&gt; {Age=Adult}   0.1435711
+## [13] {Class=3rd,Sex=Male}               =&gt; {Survived=No} 0.1917310
+## [14] {Class=3rd,Survived=No}            =&gt; {Age=Adult}   0.2162653
+## [15] {Class=3rd,Sex=Male}               =&gt; {Age=Adult}   0.2099046
+## [16] {Sex=Male,Survived=Yes}            =&gt; {Age=Adult}   0.1535666
+## [17] {Class=Crew,Survived=No}           =&gt; {Sex=Male}    0.3044071
+## [18] {Class=Crew,Survived=No}           =&gt; {Age=Adult}   0.3057701
+## [19] {Class=Crew,Sex=Male}              =&gt; {Age=Adult}   0.3916402
+## [20] {Class=Crew,Age=Adult}             =&gt; {Sex=Male}    0.3916402
+## [21] {Sex=Male,Survived=No}             =&gt; {Age=Adult}   0.6038164
+## [22] {Age=Adult,Survived=No}            =&gt; {Sex=Male}    0.6038164
+## [23] {Class=3rd,Sex=Male,Survived=No}   =&gt; {Age=Adult}   0.1758292
+## [24] {Class=3rd,Age=Adult,Survived=No}  =&gt; {Sex=Male}    0.1758292
+## [25] {Class=3rd,Sex=Male,Age=Adult}     =&gt; {Survived=No} 0.1758292
+## [26] {Class=Crew,Sex=Male,Survived=No}  =&gt; {Age=Adult}   0.3044071
+## [27] {Class=Crew,Age=Adult,Survived=No} =&gt; {Sex=Male}    0.3044071
+##      confidence lift     
+## [1]  0.9504771  1.0000000
+## [2]  0.9157895  0.9635051
+## [3]  0.9815385  1.0326798
+## [4]  0.9042553  0.9513700
+## [5]  0.8881020  0.9343750
+## [6]  0.9198312  0.9677574
+## [7]  0.9740113  1.2384742
+## [8]  1.0000000  1.0521033
+## [9]  0.9154362  1.1639949
+## [10] 0.9651007  1.0153856
+## [11] 0.9630272  1.0132040
+## [12] 0.9186047  0.9664669
+## [13] 0.8274510  1.2222950
+## [14] 0.9015152  0.9484870
+## [15] 0.9058824  0.9530818
+## [16] 0.9209809  0.9689670
+## [17] 0.9955423  1.2658514
+## [18] 1.0000000  1.0521033
+## [19] 1.0000000  1.0521033
+## [20] 0.9740113  1.2384742
+## [21] 0.9743402  1.0251065
+## [22] 0.9242003  1.1751385
+## [23] 0.9170616  0.9648435
+## [24] 0.8130252  1.0337773
+## [25] 0.8376623  1.2373791
+## [26] 1.0000000  1.0521033
+## [27] 0.9955423  1.2658514</code></pre>
+<pre class="r"><code>rules &lt;- apriori(titanic.raw, parameter = list(minlen=2, supp=0.005, conf=0.8), appearance = list(rhs=c(&quot;Survived=No&quot;, &quot;Survived=Yes&quot;), default=&quot;lhs&quot;), control = list(verbose=F))
+rules.sorted &lt;- sort(rules, by=&quot;lift&quot;)
+inspect(rules.sorted)</code></pre>
+<pre><code>##      lhs                                  rhs            support    
+## [1]  {Class=2nd,Age=Child}             =&gt; {Survived=Yes} 0.010904134
+## [2]  {Class=2nd,Sex=Female,Age=Child}  =&gt; {Survived=Yes} 0.005906406
+## [3]  {Class=1st,Sex=Female}            =&gt; {Survived=Yes} 0.064061790
+## [4]  {Class=1st,Sex=Female,Age=Adult}  =&gt; {Survived=Yes} 0.063607451
+## [5]  {Class=2nd,Sex=Female}            =&gt; {Survived=Yes} 0.042253521
+## [6]  {Class=Crew,Sex=Female}           =&gt; {Survived=Yes} 0.009086779
+## [7]  {Class=Crew,Sex=Female,Age=Adult} =&gt; {Survived=Yes} 0.009086779
+## [8]  {Class=2nd,Sex=Female,Age=Adult}  =&gt; {Survived=Yes} 0.036347115
+## [9]  {Class=2nd,Sex=Male,Age=Adult}    =&gt; {Survived=No}  0.069968196
+## [10] {Class=2nd,Sex=Male}              =&gt; {Survived=No}  0.069968196
+## [11] {Class=3rd,Sex=Male,Age=Adult}    =&gt; {Survived=No}  0.175829169
+## [12] {Class=3rd,Sex=Male}              =&gt; {Survived=No}  0.191731031
+##      confidence lift    
+## [1]  1.0000000  3.095640
+## [2]  1.0000000  3.095640
+## [3]  0.9724138  3.010243
+## [4]  0.9722222  3.009650
+## [5]  0.8773585  2.715986
+## [6]  0.8695652  2.691861
+## [7]  0.8695652  2.691861
+## [8]  0.8602151  2.662916
+## [9]  0.9166667  1.354083
+## [10] 0.8603352  1.270871
+## [11] 0.8376623  1.237379
+## [12] 0.8274510  1.222295</code></pre>
+<pre class="r"><code>subset.matrix &lt;- is.subset(rules.sorted, rules.sorted)
+subset.matrix[lower.tri(subset.matrix, diag=T)] &lt;- NA
+redundant &lt;- colSums(subset.matrix, na.rm=T) &gt;= 1
+which(redundant)</code></pre>
+<pre><code>##  {Class=2nd,Sex=Female,Age=Child,Survived=Yes} 
+##                                              2 
+##  {Class=1st,Sex=Female,Age=Adult,Survived=Yes} 
+##                                              4 
+## {Class=Crew,Sex=Female,Age=Adult,Survived=Yes} 
+##                                              7 
+##  {Class=2nd,Sex=Female,Age=Adult,Survived=Yes} 
+##                                              8</code></pre>
+<pre class="r"><code>rules.pruned &lt;- rules.sorted[!redundant]
+inspect(rules.pruned)</code></pre>
+<pre><code>##     lhs                               rhs            support    
+## [1] {Class=2nd,Age=Child}          =&gt; {Survived=Yes} 0.010904134
+## [2] {Class=1st,Sex=Female}         =&gt; {Survived=Yes} 0.064061790
+## [3] {Class=2nd,Sex=Female}         =&gt; {Survived=Yes} 0.042253521
+## [4] {Class=Crew,Sex=Female}        =&gt; {Survived=Yes} 0.009086779
+## [5] {Class=2nd,Sex=Male,Age=Adult} =&gt; {Survived=No}  0.069968196
+## [6] {Class=2nd,Sex=Male}           =&gt; {Survived=No}  0.069968196
+## [7] {Class=3rd,Sex=Male,Age=Adult} =&gt; {Survived=No}  0.175829169
+## [8] {Class=3rd,Sex=Male}           =&gt; {Survived=No}  0.191731031
+##     confidence lift    
+## [1] 1.0000000  3.095640
+## [2] 0.9724138  3.010243
+## [3] 0.8773585  2.715986
+## [4] 0.8695652  2.691861
+## [5] 0.9166667  1.354083
+## [6] 0.8603352  1.270871
+## [7] 0.8376623  1.237379
+## [8] 0.8274510  1.222295</code></pre>
+<pre class="r"><code>library(arulesViz)</code></pre>
+<pre><code>## Loading required package: grid</code></pre>
+<pre class="r"><code>plot(rules.sorted)</code></pre>
+<p><img src="Apriori_example_Titanic__files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<head>
+<p><meta http-equiv="Content-Type" content="text/html; charset=gb2312" /></p>
+<script type="text/javascript"> 
+function popup(mylink, windowname){
+  if (! window.focus)return true;
+  var herf;
+  if (typeof(mylink) == 'string') href=mylink;
+  else href = mylink.href;
+  window.open(href, windowname, 'width=400,height=200,scrollbars=no'); 
+  return false; 
+</script>
+</head>
+<button type="button" onclick="myFunction()">
+<A HREF="Lesson_5_Dependency_detection.html" onClick="return popup(this, 'notes')">Return</A>
+</button>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
